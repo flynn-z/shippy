@@ -40,7 +40,7 @@ func (m *User) Reset()         { *m = User{} }
 func (m *User) String() string { return proto.CompactTextString(m) }
 func (*User) ProtoMessage()    {}
 func (*User) Descriptor() ([]byte, []int) {
-	return fileDescriptor_user_287616b1a6cf0ae6, []int{0}
+	return fileDescriptor_user_43e4d7aa422c240e, []int{0}
 }
 func (m *User) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_User.Unmarshal(m, b)
@@ -105,7 +105,7 @@ func (m *Request) Reset()         { *m = Request{} }
 func (m *Request) String() string { return proto.CompactTextString(m) }
 func (*Request) ProtoMessage()    {}
 func (*Request) Descriptor() ([]byte, []int) {
-	return fileDescriptor_user_287616b1a6cf0ae6, []int{1}
+	return fileDescriptor_user_43e4d7aa422c240e, []int{1}
 }
 func (m *Request) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Request.Unmarshal(m, b)
@@ -138,7 +138,7 @@ func (m *Response) Reset()         { *m = Response{} }
 func (m *Response) String() string { return proto.CompactTextString(m) }
 func (*Response) ProtoMessage()    {}
 func (*Response) Descriptor() ([]byte, []int) {
-	return fileDescriptor_user_287616b1a6cf0ae6, []int{2}
+	return fileDescriptor_user_43e4d7aa422c240e, []int{2}
 }
 func (m *Response) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Response.Unmarshal(m, b)
@@ -192,7 +192,7 @@ func (m *Token) Reset()         { *m = Token{} }
 func (m *Token) String() string { return proto.CompactTextString(m) }
 func (*Token) ProtoMessage()    {}
 func (*Token) Descriptor() ([]byte, []int) {
-	return fileDescriptor_user_287616b1a6cf0ae6, []int{3}
+	return fileDescriptor_user_43e4d7aa422c240e, []int{3}
 }
 func (m *Token) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Token.Unmarshal(m, b)
@@ -245,7 +245,7 @@ func (m *Error) Reset()         { *m = Error{} }
 func (m *Error) String() string { return proto.CompactTextString(m) }
 func (*Error) ProtoMessage()    {}
 func (*Error) Descriptor() ([]byte, []int) {
-	return fileDescriptor_user_287616b1a6cf0ae6, []int{4}
+	return fileDescriptor_user_43e4d7aa422c240e, []int{4}
 }
 func (m *Error) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Error.Unmarshal(m, b)
@@ -295,6 +295,11 @@ var _ server.Option
 // Client API for UserService service
 
 type UserServiceClient interface {
+	// rpc Create (User) returns (Response) {}
+	// rpc Get (User) returns (Response) {}
+	// rpc GetAll (Request) returns (Response) {}
+	// rpc Auth (User) returns (Token) {}
+	// rpc ValidateToken (Token) returns (Token) {}
 	Create(ctx context.Context, in *User, opts ...client.CallOption) (*Response, error)
 	Get(ctx context.Context, in *User, opts ...client.CallOption) (*Response, error)
 	GetAll(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
@@ -373,6 +378,11 @@ func (c *userServiceClient) ValidateToken(ctx context.Context, in *Token, opts .
 // Server API for UserService service
 
 type UserServiceHandler interface {
+	// rpc Create (User) returns (Response) {}
+	// rpc Get (User) returns (Response) {}
+	// rpc GetAll (Request) returns (Response) {}
+	// rpc Auth (User) returns (Token) {}
+	// rpc ValidateToken (Token) returns (Token) {}
 	Create(context.Context, *User, *Response) error
 	Get(context.Context, *User, *Response) error
 	GetAll(context.Context, *Request, *Response) error
@@ -408,9 +418,9 @@ func (h *UserService) ValidateToken(ctx context.Context, in *Token, out *Token) 
 	return h.UserServiceHandler.ValidateToken(ctx, in, out)
 }
 
-func init() { proto.RegisterFile("proto/user/user.proto", fileDescriptor_user_287616b1a6cf0ae6) }
+func init() { proto.RegisterFile("proto/user/user.proto", fileDescriptor_user_43e4d7aa422c240e) }
 
-var fileDescriptor_user_287616b1a6cf0ae6 = []byte{
+var fileDescriptor_user_43e4d7aa422c240e = []byte{
 	// 374 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x53, 0x4d, 0x6b, 0xdb, 0x40,
 	0x10, 0xb5, 0x3e, 0x6d, 0x8f, 0x69, 0xa1, 0x43, 0x4b, 0x17, 0xf7, 0x62, 0x74, 0x2a, 0x94, 0xaa,
