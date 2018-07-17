@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	pb "shippy/micro_v2/user-service/proto/user"
 )
 
@@ -10,6 +11,7 @@ type handler struct {
 }
 
 func (h *handler) Create(ctx context.Context, req *pb.User, resp *pb.Response) error {
+	fmt.Println("user : ", req.Name, req.Email, req.Password, req.Company)
 	if err := h.repo.Create(req); err != nil {
 		return nil
 	}

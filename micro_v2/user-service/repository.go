@@ -35,6 +35,7 @@ func (repo *UserRepository) GetAll() ([]*pb.User, error) {
 }
 
 func (repo *UserRepository) Create(u *pb.User) error {
+
 	if err := repo.db.Create(&u).Error; err != nil {
 		return err
 	}
