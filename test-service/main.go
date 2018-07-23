@@ -6,6 +6,7 @@ import (
 
 	"github.com/labstack/gommon/log"
 	"github.com/micro/go-micro"
+	k8s "github.com/micro/kubernetes/go/micro"
 )
 
 func main() {
@@ -26,7 +27,7 @@ func main() {
 	// 自动检查 User 结构是否变化
 	db.AutoMigrate(&pb.User{})
 
-	s := micro.NewService(
+	s := k8s.NewService(
 		micro.Name("go.micro.srv.test"),
 		micro.Version("latest"),
 	)

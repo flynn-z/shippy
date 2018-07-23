@@ -8,7 +8,7 @@ import (
 )
 
 func CreateConnection() (*gorm.DB, error) {
-	host := "127.0.0.1"
+	host := "172.16.18.174"
 	user := "postgres"
 	password := "123456"
 	dbName := "postgres"
