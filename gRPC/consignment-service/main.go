@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 	"net"
-	pb "shippy/consignment-service/proto/consignment"
+	pb "shippy/gRPC/consignment-service/proto/consignment"
 
 	"google.golang.org/grpc"
 )
